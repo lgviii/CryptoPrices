@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView btcResultBox = null;
     private TextView ethResultBox = null;
     private TextView xrpResultBox = null;
+    RadioButton usdRadioButton = null;
+    RadioButton eurRadioButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
 
         addListenerOnRadioButton();
 
+        // set default on button
+        radioGroupCurrency.check(usdRadioButton.getId());
     }
 
     public void addListenerOnRadioButton() {
         radioGroupCurrency = (RadioGroup) findViewById(R.id.radioCurrency);
-        RadioButton usdRadioButton = (RadioButton) findViewById(R.id.radioButtonUsd);
-        RadioButton eurRadioButton = (RadioButton) findViewById(R.id.radioButtonEur);
+        usdRadioButton = (RadioButton) findViewById(R.id.radioButtonUsd);
+        eurRadioButton = (RadioButton) findViewById(R.id.radioButtonEur);
 
         usdRadioButton.setOnClickListener(
                 new View.OnClickListener() {
